@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<!-- This is the launch file for the third assignment of the Experimental
+     robotics laboratory -->
+
+<launch>
+    <!-- parameter used to scale -->
+    <param name='sim_scale' type='int' value='1'/>
+    
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="extra_gazebo_args" default=""/>
+  <arg name="gui" default="true"/>
+  <arg name="recording" default="false"/>
+  <arg name="world" default="house2" />
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="physics" default="ode"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" value="$(find exp_assignment3)/worlds/$(arg world).world"/>
+  <arg name="respawn_gazebo" default="false"/>
+  <arg name="use_clock_frequency" default="false"/>
+  <arg name="pub_clock_frequency" default="100"/>
+  <!-- set use_sim_time flag -->
+  <param name="/use_sim_time" value="$(arg use_sim_time)"/>
+  <!-- set command arguments -->
+  <arg unless="$(arg paused)" name="command_arg1" value=""/>
+  <arg     if="$(arg paused)" name="command_arg1" value="-u"/>
+  <arg unless="$(arg recording)" name="command_arg2" value=""/>
+  <arg     if="$(arg recording)" name="command_arg2" value="-r"/>
+  <arg unless="$(arg verbose)" name="command_arg3" value=""/>
+  <arg     if="$(arg verbose)" name="command_arg3" value="--verbose"/>
+  <arg unless="$(arg debug)" name="script_type" value="gzserver"/>
+  <arg     if="$(arg debug)" name="script_type" value="debug"/>
+
+  <!-- start Gazebo server-->
+  <group if="$(arg use_clock_frequency)">
+    <param name="gazebo/pub_clock_frequency" value="$(arg pub_clock_frequency)" />
+  </group>
+  <node name="gazebo" pkg="gazebo_ros" type="$(arg script_type)" respawn="$(arg respawn_gazebo)" output="screen"
+	args="$(arg command_arg1) $(arg command_arg2) $(arg command_arg3) -e $(arg physics) $(arg extra_gazebo_args) $(arg world_name)" />
+	
+  <!-- start Gazebo client -->
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+  </group>
+  
+  <!-- Start RViz -->  
+  <param name="use_gui" value="false"/>
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> 
+   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find exp_assignment3)/config/config.rviz" />
+
+
+  <!-- load human model in Gazebo -->
+  <param name="human_description1" textfile="$(find exp_assignment3)/urdf/human.urdf" />   
+  <node name="urdf_spawner_human1" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model human1 -param human_description1 -x -6 -y 8.5 -z 0.34 -R 0 -P 0 -Y -0.75"/>
+
+  <!-- parameters -->
+    <!-- parameter specifying robot current state -->
+    <param name='state' type='string' value='sleep'/>
+    <!-- parameter used to specify the x and y coordinates of the balls -->
+    <param name='blue_x' type='double' value='100'/>
+    <param name='blue_y' type='double' value='100'/>
+    <param name='red_x' type='double' value='100'/>
+    <param name='red_y' type='double' value='100'/>
+    <param name='green_x' type='double' value='100'/>
+    <param name='green_y' type='double' value='100'/>
+    <param name='yellow_x' type='double' value='100'/>
+    <param name='yellow_y' type='double' value='100'/>
+    <param name='magenta_x' type='double' value='100'/>
+    <param name='magenta_y' type='double' value='100'/>
+    <param name='black_x' type='double' value='100'/>
+    <param name='black_y' type='double' value='100'/>
+    <!-- parameter to check if a new ball is found -->
+    <param name='is_ball_found' type='int' value='0'/>
+    <!-- parameter to identify ball to be searched -->
+    <param name='is_ball_known' type='int' value='100'/>
+	<!-- parameter to check if its currently in play state -->
+    <param name='is_play_state' type='int' value='0'/>
+
+    <!-- parameter required by the urdf_spawner -->
+    <param name="robot_description" 
+	    command="$(find xacro)/xacro --inorder $(find exp_assignment3)/urdf/robot.xacro"/>
+
+  <!-- nodes -->
+    <!-- run a Python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+      respawn="false" output="screen"
+	    args="-urdf -model robot1 -param robot_description -x -5 -y 8 -Y -1.57 -z 0.05"/>
+    
+    <!-- node used state machine -->
+    <node pkg="exp_assignment3" type="state_machine.py"
+      name="state_machine" output="screen" respawn="false"/>
+	<!-- node used to scan envirionment -->
+    <node pkg="exp_assignment3" type="camera_capture.py"
+      name="camera_capture" output="screen" respawn="false"/>
+
+    <!-- node for getting verbal commands -->
+    <node pkg="exp_assignment3" type="verbal_interaction.py"
+      name="verbal_interaction" output="screen" respawn="false"/>
+
+    <!-- node to implement the ball to get coordinates -->
+    <node pkg="exp_assignment3" type="ball.py"
+      name="ball" output="screen" respawn="false"/>
+
+    <!-- the explore_lite algorithm -->
+    <node pkg="exp_assignment3" type="exp_assignment3_node" respawn="false" name="explore_node">
+      <param name="robot_base_frame" value="link_chassis"/>
+      <param name="costmap_topic" value="map"/>
+      <param name="costmap_updates_topic" value="map_updates"/>
+      <param name="visualize" value="true"/>
+      <param name="planner_frequency" value="0.33"/>
+      <param name="progress_timeout" value="30.0"/>
+      <param name="potential_scale" value="3.0"/>
+      <param name="orientation_scale" value="0.0"/>
+      <param name="gain_scale" value="1.0"/>
+      <param name="transform_tolerance" value="0.3"/>
+      <param name="min_frontier_size" value="0.75"/>
+    </node>
+
+    <!-- include the launch file for the move_base algorithm -->
+    <include file="$(find exp_assignment3)/launch/gmapping.launch"></include>
+    
+    <!-- include the launch file for the move_base algorithm -->
+    <include file="$(find exp_assignment3)/launch/move_base.launch"></include>
+    
+    
+    
+</launch>
