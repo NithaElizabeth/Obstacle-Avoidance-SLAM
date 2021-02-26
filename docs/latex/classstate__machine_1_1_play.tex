@@ -1,0 +1,254 @@
+\hypertarget{classstate__machine_1_1_play}{}\doxysection{state\+\_\+machine.\+Play Class Reference}
+\label{classstate__machine_1_1_play}\index{state\_machine.Play@{state\_machine.Play}}
+
+
+\mbox{\hyperlink{classstate__machine_1_1_play}{Play}} state.  
+
+
+Inheritance diagram for state\+\_\+machine.\+Play\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstate__machine_1_1_play}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_play_a5993a23d8be7f7b2647f71ede0334957}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_play_a04168d6842960585b4bbcf58f950547b}{execute}} (self, userdata)
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_play_ae468032afaca72aad332d2c04fcd7798}{play\+\_\+callback}} (self, data)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstate__machine_1_1_play}{Play}} state callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a1209b396d178b0136329bbb2ad5baadc}{move\+\_\+base\+\_\+play}} = actionlib.\+Simple\+Action\+Client(\textquotesingle{}move\+\_\+base\textquotesingle{}, Move\+Base\+Action)
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a9215eeae8c2993df763122985e9f81d7}{target\+\_\+pos}} = Move\+Base\+Goal()
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_adcda2e6b922bcad5ae48114e261a629d}{frame\+\_\+id}}
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a01bfe2e6eccf6ca0c9d34abab1853d40}{stamp}}
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_ab81c0834bc30bf39efc1951c02208b8c}{w}}
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a5865b10d7f5b82255fc5c5cad81e38bc}{x}}
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a7b99488c38cb850cb0cef1f5ba09f188}{y}}
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a0fde97a68c1411bdd0ce0c84303d835c}{ball\+\_\+service\+\_\+client}} = rospy.\+Service\+Proxy(\textquotesingle{}Ball\+Location\textquotesingle{}, Ball\+Location)
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_af4dd8cbf86b5608d0610f4b5bdf3155d}{ball\+\_\+location}} = \mbox{\hyperlink{classstate__machine_1_1_play_a0fde97a68c1411bdd0ce0c84303d835c}{ball\+\_\+service\+\_\+client}}(\mbox{\hyperlink{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}{room\+\_\+type}})
+\item 
+\mbox{\hyperlink{classstate__machine_1_1_play_a48f9482531b3a4d57c7a556d3c739aaa}{idx}} = \mbox{\hyperlink{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}{room\+\_\+type}}
+\item 
+int \mbox{\hyperlink{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}{room\+\_\+type}} = 100
+\item 
+int \mbox{\hyperlink{classstate__machine_1_1_play_aa70a3b58c46913c6c61a2c5267a6fd11}{counter\+\_\+time}} = counter\+\_\+time -\/ 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classstate__machine_1_1_play}{Play}} state. 
+
+\begin{DoxyVerb}This class defines the state Play
+    
+This is the state in which robots return to home position initially 
+and waits for the roomlocation. On attaining a command it checks with
+a service to find the coordinates.if the ball location is available 
+already then robot moves to that location otherwise switches its 
+state to Find
+The state subscribes to verbal_interaction node to get commands
+
+Methods
+----------
+_init_(self)
+        This methods initialises all the attributes of this class
+execute(self,userdata)
+        This methods executes the play state in which the robot moves to
+        its home position from its current location
+    play_callback(self,data)
+        This callback function finds the room correspondig to the ball
+        
+    Attributes
+    ----------
+    home_position
+        A  variable of MoveBaseGoal() to store the target position
+    itr
+        To keep the track of iterations
+    move_base_sleep
+        A move_base client to send the home location
+\end{DoxyVerb}
+ 
+
+Definition at line 214 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_play_a5993a23d8be7f7b2647f71ede0334957}\label{classstate__machine_1_1_play_a5993a23d8be7f7b2647f71ede0334957}} 
+\index{state\_machine.Play@{state\_machine.Play}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Play.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 247 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_play_a04168d6842960585b4bbcf58f950547b}\label{classstate__machine_1_1_play_a04168d6842960585b4bbcf58f950547b}} 
+\index{state\_machine.Play@{state\_machine.Play}!execute@{execute}}
+\index{execute@{execute}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Play.\+execute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{userdata }\end{DoxyParamCaption})}
+
+
+
+Definition at line 255 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_ae468032afaca72aad332d2c04fcd7798}\label{classstate__machine_1_1_play_ae468032afaca72aad332d2c04fcd7798}} 
+\index{state\_machine.Play@{state\_machine.Play}!play\_callback@{play\_callback}}
+\index{play\_callback@{play\_callback}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{play\_callback()}{play\_callback()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Play.\+play\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classstate__machine_1_1_play}{Play}} state callback. 
+
+
+
+Definition at line 322 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_play_af4dd8cbf86b5608d0610f4b5bdf3155d}\label{classstate__machine_1_1_play_af4dd8cbf86b5608d0610f4b5bdf3155d}} 
+\index{state\_machine.Play@{state\_machine.Play}!ball\_location@{ball\_location}}
+\index{ball\_location@{ball\_location}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{ball\_location}{ball\_location}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+ball\+\_\+location = \mbox{\hyperlink{classstate__machine_1_1_play_a0fde97a68c1411bdd0ce0c84303d835c}{ball\+\_\+service\+\_\+client}}(\mbox{\hyperlink{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}{room\+\_\+type}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 282 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a0fde97a68c1411bdd0ce0c84303d835c}\label{classstate__machine_1_1_play_a0fde97a68c1411bdd0ce0c84303d835c}} 
+\index{state\_machine.Play@{state\_machine.Play}!ball\_service\_client@{ball\_service\_client}}
+\index{ball\_service\_client@{ball\_service\_client}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{ball\_service\_client}{ball\_service\_client}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+ball\+\_\+service\+\_\+client = rospy.\+Service\+Proxy(\textquotesingle{}Ball\+Location\textquotesingle{}, Ball\+Location)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 281 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_aa70a3b58c46913c6c61a2c5267a6fd11}\label{classstate__machine_1_1_play_aa70a3b58c46913c6c61a2c5267a6fd11}} 
+\index{state\_machine.Play@{state\_machine.Play}!counter\_time@{counter\_time}}
+\index{counter\_time@{counter\_time}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{counter\_time}{counter\_time}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+Play.\+counter\+\_\+time = counter\+\_\+time -\/ 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 306 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_adcda2e6b922bcad5ae48114e261a629d}\label{classstate__machine_1_1_play_adcda2e6b922bcad5ae48114e261a629d}} 
+\index{state\_machine.Play@{state\_machine.Play}!frame\_id@{frame\_id}}
+\index{frame\_id@{frame\_id}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{frame\_id}{frame\_id}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+frame\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 263 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a48f9482531b3a4d57c7a556d3c739aaa}\label{classstate__machine_1_1_play_a48f9482531b3a4d57c7a556d3c739aaa}} 
+\index{state\_machine.Play@{state\_machine.Play}!idx@{idx}}
+\index{idx@{idx}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{idx}{idx}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+idx = \mbox{\hyperlink{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}{room\+\_\+type}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 283 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a1209b396d178b0136329bbb2ad5baadc}\label{classstate__machine_1_1_play_a1209b396d178b0136329bbb2ad5baadc}} 
+\index{state\_machine.Play@{state\_machine.Play}!move\_base\_play@{move\_base\_play}}
+\index{move\_base\_play@{move\_base\_play}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{move\_base\_play}{move\_base\_play}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+move\+\_\+base\+\_\+play = actionlib.\+Simple\+Action\+Client(\textquotesingle{}move\+\_\+base\textquotesingle{}, Move\+Base\+Action)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 261 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}\label{classstate__machine_1_1_play_ab1d425b8ccb0481a59c14757fa1f5823}} 
+\index{state\_machine.Play@{state\_machine.Play}!room\_type@{room\_type}}
+\index{room\_type@{room\_type}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{room\_type}{room\_type}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+Play.\+room\+\_\+type = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 284 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a01bfe2e6eccf6ca0c9d34abab1853d40}\label{classstate__machine_1_1_play_a01bfe2e6eccf6ca0c9d34abab1853d40}} 
+\index{state\_machine.Play@{state\_machine.Play}!stamp@{stamp}}
+\index{stamp@{stamp}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{stamp}{stamp}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+stamp\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 264 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a9215eeae8c2993df763122985e9f81d7}\label{classstate__machine_1_1_play_a9215eeae8c2993df763122985e9f81d7}} 
+\index{state\_machine.Play@{state\_machine.Play}!target\_pos@{target\_pos}}
+\index{target\_pos@{target\_pos}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{target\_pos}{target\_pos}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+target\+\_\+pos = Move\+Base\+Goal()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 262 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_ab81c0834bc30bf39efc1951c02208b8c}\label{classstate__machine_1_1_play_ab81c0834bc30bf39efc1951c02208b8c}} 
+\index{state\_machine.Play@{state\_machine.Play}!w@{w}}
+\index{w@{w}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+w\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 265 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a5865b10d7f5b82255fc5c5cad81e38bc}\label{classstate__machine_1_1_play_a5865b10d7f5b82255fc5c5cad81e38bc}} 
+\index{state\_machine.Play@{state\_machine.Play}!x@{x}}
+\index{x@{x}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+x\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 266 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_play_a7b99488c38cb850cb0cef1f5ba09f188}\label{classstate__machine_1_1_play_a7b99488c38cb850cb0cef1f5ba09f188}} 
+\index{state\_machine.Play@{state\_machine.Play}!y@{y}}
+\index{y@{y}!state\_machine.Play@{state\_machine.Play}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily state\+\_\+machine.\+Play.\+y\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 267 of file state\+\_\+machine.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{state__machine_8py}{state\+\_\+machine.\+py}}\end{DoxyCompactItemize}

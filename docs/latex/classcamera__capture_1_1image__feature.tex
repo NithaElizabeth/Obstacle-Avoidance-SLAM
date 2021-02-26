@@ -1,0 +1,537 @@
+\hypertarget{classcamera__capture_1_1image__feature}{}\doxysection{camera\+\_\+capture.\+image\+\_\+feature Class Reference}
+\label{classcamera__capture_1_1image__feature}\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_a4b58b28190924a49cf6236802c77bad5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{contours}} (self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, color\+Lower, color\+Upper)
+\begin{DoxyCompactList}\small\item\em for contours \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_a302c2759c7d1c1c61a65bd1cc91c4142}{callback}} (self, ros\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_abf200bb793bf57f44b6344ba4cf5e3a3}{anonymous}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a47cd7b99ae5a383ac4a93e0961b9a9c0}{image\+\_\+pub}}
+\begin{DoxyCompactList}\small\item\em topic wgere we publish published \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a745a64c6625e30d1ce8cd8543e9968b8}{Compressed\+Image}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a6e40b4d11f5d6d36307f4235211a9786}{queue\+\_\+size}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_ab13be845d8b1e653915b957197e25983}{vel\+\_\+pub}}
+\begin{DoxyCompactList}\small\item\em topic where we robot velocity commands \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_aa8af839b549bcf96e5142cbc2684f9ac}{Twist}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a36e74ae8e266f1401a10a928de3e156e}{subscriber}}
+\begin{DoxyCompactList}\small\item\em subscribed topic \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_ad578005674c1900e6cc755ab613a2521}{callback}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a326f41241cd82c15b0080daf3449482a}{np\+\_\+arr}} = np.\+fromstring(ros\+\_\+data.\+data, np.\+uint8)
+\begin{DoxyCompactList}\small\item\em direct conversion to C\+V2 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a8181f20989a94205c682cbbe123fc070}{image\+\_\+np}} = cv2.\+imdecode(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a326f41241cd82c15b0080daf3449482a}{np\+\_\+arr}}, cv2.\+I\+M\+R\+E\+A\+D\+\_\+\+C\+O\+L\+OR)
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a5e12344062dec0f7351ea1e6e0ce81ec}{blurred}} = cv2.\+Gaussian\+Blur(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a8181f20989a94205c682cbbe123fc070}{image\+\_\+np}}, (11, 11), 0)
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}} = cv2.\+cvt\+Color(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a5e12344062dec0f7351ea1e6e0ce81ec}{blurred}}, cv2.\+C\+O\+L\+O\+R\+\_\+\+B\+G\+R2\+H\+SV)
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa9d67a927a2bfd0a788931723e6cc98e}{blue\+Cnts}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a7d44abc872a6cbc456d2825e25511145}{blue\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a54147e811abf81ca9c745cbf8c436df6}{blue\+Upper}})
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_a44e3dd7424118fde34739a6c37d19b34}{red\+Cnts}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a079a7eb56feb86fd11a3563e2c354dda}{red\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a1f1a0d295bf03bc4a54f28668e25e191}{red\+Upper}})
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_afdc7f4a4ca87584fb6613960742845ba}{green\+Cnts}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_aa3e9f886984abb485a975c62005ed6ce}{green\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a7e3f7333c0a47ea1d4ead10f3a0ed677}{green\+Upper}})
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_a1eed235bf266d7034b7e11bcc925c40b}{yellow\+Cnts}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_aedb679e2187f805f89d90676eeeef7ad}{yellow\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a0bb5e95f788427a604df6ac9cce8ee88}{yellow\+Upper}})
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_a8d4412005b930b97df97e32e7e6c253e}{magenta\+Cnts}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a0082fbc5427d2bb62e3d101bc24ba8fb}{magenta\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a253bfdaaaa0f2356155b28e245f0d000}{magenta\+Upper}})
+\item 
+def \mbox{\hyperlink{classcamera__capture_1_1image__feature_a2ed93cb36fac2b7a284ff0bddbe07b1e}{black\+Cnts}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a8c09595aeb0c95206e2a5b17c42b325a}{black\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a8e60dc7ab7005fa38b10986fffcf13a7}{black\+Upper}})
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a52a7cd9ddd015dfd0ee1adce8b972142}{center}} = None
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a01febdcc46bdd91a7bfe47d08d4d47da}{move\+\_\+base\+\_\+client}} = actionlib.\+Simple\+Action\+Client(\textquotesingle{}move\+\_\+base\textquotesingle{}, Move\+Base\+Action)
+\begin{DoxyCompactList}\small\item\em action client used to stop move\+\_\+base execution \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcamera__capture_1_1image__feature_aab4b3e2582180ba254b3492155d3ae1a}{is\+\_\+blue}} = 1
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_ae62d879dd960008e98f4a16f98ae58bb}{c}} = max(\mbox{\hyperlink{classcamera__capture_1_1image__feature_aa9d67a927a2bfd0a788931723e6cc98e}{blue\+Cnts}}, key=cv2.\+contour\+Area)
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_ab3e24b0c312ea884bc86ef3e0c4606c2}{radius}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}{M}} = cv2.\+moments(\mbox{\hyperlink{classcamera__capture_1_1image__feature_ae62d879dd960008e98f4a16f98ae58bb}{c}})
+\item 
+tuple \mbox{\hyperlink{classcamera__capture_1_1image__feature_a52a7cd9ddd015dfd0ee1adce8b972142}{center}} = (int(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}{M}}\mbox{[}\char`\"{}m10\char`\"{}\mbox{]} / M\mbox{[}\char`\"{}m00\char`\"{}\mbox{]}), int(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}{M}}\mbox{[}\char`\"{}m01\char`\"{}\mbox{]} / M\mbox{[}\char`\"{}m00\char`\"{}\mbox{]}))
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_ab20773c94c8b58c93bed94891f46b7a2}{vel}} = \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa8af839b549bcf96e5142cbc2684f9ac}{Twist}}()
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a6fc261c7190483591bc9969f13ab3d7f}{z}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a3cf2fa68e759ee33f8b52c02a2fe5302}{x}}
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a302de4fdcc4a3988af7cfc25c5715bee}{pos}} = rospy.\+wait\+\_\+for\+\_\+message(\textquotesingle{}odom\textquotesingle{}, Odometry, timeout = None)
+\item 
+int \mbox{\hyperlink{classcamera__capture_1_1image__feature_a0721d2e433811103ee14db7a5f414ef3}{is\+\_\+red}} = 1
+\item 
+int \mbox{\hyperlink{classcamera__capture_1_1image__feature_a641bb4fc6c04fe5426d34ea1bc9f1d9e}{is\+\_\+green}} = 1
+\item 
+int \mbox{\hyperlink{classcamera__capture_1_1image__feature_a8b8af48f0999f298a926c604289ddae5}{is\+\_\+yellow}} = 1
+\item 
+int \mbox{\hyperlink{classcamera__capture_1_1image__feature_a19e98b50c0a31cf282c03e87b3baa3af}{is\+\_\+magenta}} = 1
+\item 
+int \mbox{\hyperlink{classcamera__capture_1_1image__feature_a91f668d2c3671da22e959e7f24400037}{is\+\_\+black}} = 1
+\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a7af8d1a4b9c52281f1f8ec8111ccbdb5}{explore\+\_\+stop}} = rospy.\+Service\+Proxy(\textquotesingle{}stop\+\_\+flag\textquotesingle{}, Explore)
+\begin{DoxyCompactList}\small\item\em explore lite service client used to stop explore\+\_\+lite algorithm execution \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcamera__capture_1_1image__feature_a7eae1c4407b628117410e6784d6ebb3d}{explore\+\_\+start}} = rospy.\+Service\+Proxy(\textquotesingle{}start\+\_\+flag\textquotesingle{}, Explore)
+\begin{DoxyCompactList}\small\item\em explore\+\_\+lite starting \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 56 of file camera\+\_\+capture.\+py.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a4b58b28190924a49cf6236802c77bad5}\label{classcamera__capture_1_1image__feature_a4b58b28190924a49cf6236802c77bad5}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file camera\+\_\+capture.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a302c2759c7d1c1c61a65bd1cc91c4142}\label{classcamera__capture_1_1image__feature_a302c2759c7d1c1c61a65bd1cc91c4142}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!callback@{callback}}
+\index{callback@{callback}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{callback()}{callback()}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ros\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}\label{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!contours@{contours}}
+\index{contours@{contours}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{contours()}{contours()}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+contours (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hsv,  }\item[{}]{color\+Lower,  }\item[{}]{color\+Upper }\end{DoxyParamCaption})}
+
+
+
+for contours 
+
+
+
+Definition at line 75 of file camera\+\_\+capture.\+py.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_abf200bb793bf57f44b6344ba4cf5e3a3}\label{classcamera__capture_1_1image__feature_abf200bb793bf57f44b6344ba4cf5e3a3}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!anonymous@{anonymous}}
+\index{anonymous@{anonymous}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{anonymous}{anonymous}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+anonymous\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Initialize ros publisher, ros subscriber\end{DoxyVerb}
+ 
+
+Definition at line 61 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a2ed93cb36fac2b7a284ff0bddbe07b1e}\label{classcamera__capture_1_1image__feature_a2ed93cb36fac2b7a284ff0bddbe07b1e}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!blackCnts@{blackCnts}}
+\index{blackCnts@{blackCnts}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{blackCnts}{blackCnts}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+black\+Cnts = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a8c09595aeb0c95206e2a5b17c42b325a}{black\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a8e60dc7ab7005fa38b10986fffcf13a7}{black\+Upper}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 105 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_aa9d67a927a2bfd0a788931723e6cc98e}\label{classcamera__capture_1_1image__feature_aa9d67a927a2bfd0a788931723e6cc98e}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!blueCnts@{blueCnts}}
+\index{blueCnts@{blueCnts}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{blueCnts}{blueCnts}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+blue\+Cnts = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a7d44abc872a6cbc456d2825e25511145}{blue\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a54147e811abf81ca9c745cbf8c436df6}{blue\+Upper}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 100 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a5e12344062dec0f7351ea1e6e0ce81ec}\label{classcamera__capture_1_1image__feature_a5e12344062dec0f7351ea1e6e0ce81ec}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!blurred@{blurred}}
+\index{blurred@{blurred}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{blurred}{blurred}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+blurred = cv2.\+Gaussian\+Blur(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a8181f20989a94205c682cbbe123fc070}{image\+\_\+np}}, (11, 11), 0)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 97 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_ae62d879dd960008e98f4a16f98ae58bb}\label{classcamera__capture_1_1image__feature_ae62d879dd960008e98f4a16f98ae58bb}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!c@{c}}
+\index{c@{c}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+c = max(\mbox{\hyperlink{classcamera__capture_1_1image__feature_aa9d67a927a2bfd0a788931723e6cc98e}{blue\+Cnts}}, key=cv2.\+contour\+Area)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 120 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_ad578005674c1900e6cc755ab613a2521}\label{classcamera__capture_1_1image__feature_ad578005674c1900e6cc755ab613a2521}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!callback@{callback}}
+\index{callback@{callback}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{callback}{callback}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+callback\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 72 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a52a7cd9ddd015dfd0ee1adce8b972142}\label{classcamera__capture_1_1image__feature_a52a7cd9ddd015dfd0ee1adce8b972142}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!center@{center}}
+\index{center@{center}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{center}{center}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tuple camera\+\_\+capture.\+image\+\_\+feature.\+center = None\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 107 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a52a7cd9ddd015dfd0ee1adce8b972142}\label{classcamera__capture_1_1image__feature_a52a7cd9ddd015dfd0ee1adce8b972142}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!center@{center}}
+\index{center@{center}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{center}{center}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tuple camera\+\_\+capture.\+image\+\_\+feature.\+center = (int(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}{M}}\mbox{[}\char`\"{}m10\char`\"{}\mbox{]} / M\mbox{[}\char`\"{}m00\char`\"{}\mbox{]}), int(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}{M}}\mbox{[}\char`\"{}m01\char`\"{}\mbox{]} / M\mbox{[}\char`\"{}m00\char`\"{}\mbox{]}))\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 123 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a745a64c6625e30d1ce8cd8543e9968b8}\label{classcamera__capture_1_1image__feature_a745a64c6625e30d1ce8cd8543e9968b8}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!CompressedImage@{CompressedImage}}
+\index{CompressedImage@{CompressedImage}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{CompressedImage}{CompressedImage}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+Compressed\+Image\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 65 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a7eae1c4407b628117410e6784d6ebb3d}\label{classcamera__capture_1_1image__feature_a7eae1c4407b628117410e6784d6ebb3d}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!explore\_start@{explore\_start}}
+\index{explore\_start@{explore\_start}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{explore\_start}{explore\_start}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+explore\+\_\+start = rospy.\+Service\+Proxy(\textquotesingle{}start\+\_\+flag\textquotesingle{}, Explore)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+explore\+\_\+lite starting 
+
+
+
+Definition at line 388 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a7af8d1a4b9c52281f1f8ec8111ccbdb5}\label{classcamera__capture_1_1image__feature_a7af8d1a4b9c52281f1f8ec8111ccbdb5}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!explore\_stop@{explore\_stop}}
+\index{explore\_stop@{explore\_stop}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{explore\_stop}{explore\_stop}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+explore\+\_\+stop = rospy.\+Service\+Proxy(\textquotesingle{}stop\+\_\+flag\textquotesingle{}, Explore)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+explore lite service client used to stop explore\+\_\+lite algorithm execution 
+
+explore lite stopping
+
+explore lite stoping
+
+explore lite starting 
+
+Definition at line 352 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_afdc7f4a4ca87584fb6613960742845ba}\label{classcamera__capture_1_1image__feature_afdc7f4a4ca87584fb6613960742845ba}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!greenCnts@{greenCnts}}
+\index{greenCnts@{greenCnts}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{greenCnts}{greenCnts}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+green\+Cnts = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_aa3e9f886984abb485a975c62005ed6ce}{green\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a7e3f7333c0a47ea1d4ead10f3a0ed677}{green\+Upper}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 102 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}\label{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!hsv@{hsv}}
+\index{hsv@{hsv}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{hsv}{hsv}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+hsv = cv2.\+cvt\+Color(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a5e12344062dec0f7351ea1e6e0ce81ec}{blurred}}, cv2.\+C\+O\+L\+O\+R\+\_\+\+B\+G\+R2\+H\+SV)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 98 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a8181f20989a94205c682cbbe123fc070}\label{classcamera__capture_1_1image__feature_a8181f20989a94205c682cbbe123fc070}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!image\_np@{image\_np}}
+\index{image\_np@{image\_np}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{image\_np}{image\_np}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+image\+\_\+np = cv2.\+imdecode(\mbox{\hyperlink{classcamera__capture_1_1image__feature_a326f41241cd82c15b0080daf3449482a}{np\+\_\+arr}}, cv2.\+I\+M\+R\+E\+A\+D\+\_\+\+C\+O\+L\+OR)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 91 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a47cd7b99ae5a383ac4a93e0961b9a9c0}\label{classcamera__capture_1_1image__feature_a47cd7b99ae5a383ac4a93e0961b9a9c0}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!image\_pub@{image\_pub}}
+\index{image\_pub@{image\_pub}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{image\_pub}{image\_pub}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+image\+\_\+pub\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+topic wgere we publish published 
+
+
+
+Definition at line 64 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a91f668d2c3671da22e959e7f24400037}\label{classcamera__capture_1_1image__feature_a91f668d2c3671da22e959e7f24400037}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!is\_black@{is\_black}}
+\index{is\_black@{is\_black}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{is\_black}{is\_black}}
+{\footnotesize\ttfamily int camera\+\_\+capture.\+image\+\_\+feature.\+is\+\_\+black = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 299 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_aab4b3e2582180ba254b3492155d3ae1a}\label{classcamera__capture_1_1image__feature_aab4b3e2582180ba254b3492155d3ae1a}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!is\_blue@{is\_blue}}
+\index{is\_blue@{is\_blue}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{is\_blue}{is\_blue}}
+{\footnotesize\ttfamily int camera\+\_\+capture.\+image\+\_\+feature.\+is\+\_\+blue = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 117 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a641bb4fc6c04fe5426d34ea1bc9f1d9e}\label{classcamera__capture_1_1image__feature_a641bb4fc6c04fe5426d34ea1bc9f1d9e}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!is\_green@{is\_green}}
+\index{is\_green@{is\_green}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{is\_green}{is\_green}}
+{\footnotesize\ttfamily int camera\+\_\+capture.\+image\+\_\+feature.\+is\+\_\+green = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 191 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a19e98b50c0a31cf282c03e87b3baa3af}\label{classcamera__capture_1_1image__feature_a19e98b50c0a31cf282c03e87b3baa3af}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!is\_magenta@{is\_magenta}}
+\index{is\_magenta@{is\_magenta}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{is\_magenta}{is\_magenta}}
+{\footnotesize\ttfamily int camera\+\_\+capture.\+image\+\_\+feature.\+is\+\_\+magenta = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 263 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a0721d2e433811103ee14db7a5f414ef3}\label{classcamera__capture_1_1image__feature_a0721d2e433811103ee14db7a5f414ef3}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!is\_red@{is\_red}}
+\index{is\_red@{is\_red}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{is\_red}{is\_red}}
+{\footnotesize\ttfamily int camera\+\_\+capture.\+image\+\_\+feature.\+is\+\_\+red = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 154 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a8b8af48f0999f298a926c604289ddae5}\label{classcamera__capture_1_1image__feature_a8b8af48f0999f298a926c604289ddae5}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!is\_yellow@{is\_yellow}}
+\index{is\_yellow@{is\_yellow}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{is\_yellow}{is\_yellow}}
+{\footnotesize\ttfamily int camera\+\_\+capture.\+image\+\_\+feature.\+is\+\_\+yellow = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 227 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}\label{classcamera__capture_1_1image__feature_a098699a2afc87d91576d7d38457fe1c5}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!M@{M}}
+\index{M@{M}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+M = cv2.\+moments(\mbox{\hyperlink{classcamera__capture_1_1image__feature_ae62d879dd960008e98f4a16f98ae58bb}{c}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 122 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a8d4412005b930b97df97e32e7e6c253e}\label{classcamera__capture_1_1image__feature_a8d4412005b930b97df97e32e7e6c253e}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!magentaCnts@{magentaCnts}}
+\index{magentaCnts@{magentaCnts}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{magentaCnts}{magentaCnts}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+magenta\+Cnts = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a0082fbc5427d2bb62e3d101bc24ba8fb}{magenta\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a253bfdaaaa0f2356155b28e245f0d000}{magenta\+Upper}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 104 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a01febdcc46bdd91a7bfe47d08d4d47da}\label{classcamera__capture_1_1image__feature_a01febdcc46bdd91a7bfe47d08d4d47da}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!move\_base\_client@{move\_base\_client}}
+\index{move\_base\_client@{move\_base\_client}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{move\_base\_client}{move\_base\_client}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+move\+\_\+base\+\_\+client = actionlib.\+Simple\+Action\+Client(\textquotesingle{}move\+\_\+base\textquotesingle{}, Move\+Base\+Action)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+action client used to stop move\+\_\+base execution 
+
+action client to stop move\+\_\+base execution
+
+action client used stop move\+\_\+base execution 
+
+Definition at line 115 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a326f41241cd82c15b0080daf3449482a}\label{classcamera__capture_1_1image__feature_a326f41241cd82c15b0080daf3449482a}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!np\_arr@{np\_arr}}
+\index{np\_arr@{np\_arr}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{np\_arr}{np\_arr}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+np\+\_\+arr = np.\+fromstring(ros\+\_\+data.\+data, np.\+uint8)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+direct conversion to C\+V2 
+
+\begin{DoxyVerb}Callback function of subscribed topic\end{DoxyVerb}
+ 
+
+Definition at line 90 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a302de4fdcc4a3988af7cfc25c5715bee}\label{classcamera__capture_1_1image__feature_a302de4fdcc4a3988af7cfc25c5715bee}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!pos@{pos}}
+\index{pos@{pos}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+pos = rospy.\+wait\+\_\+for\+\_\+message(\textquotesingle{}odom\textquotesingle{}, Odometry, timeout = None)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 140 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a6e40b4d11f5d6d36307f4235211a9786}\label{classcamera__capture_1_1image__feature_a6e40b4d11f5d6d36307f4235211a9786}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!queue\_size@{queue\_size}}
+\index{queue\_size@{queue\_size}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{queue\_size}{queue\_size}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+queue\+\_\+size\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 65 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_ab3e24b0c312ea884bc86ef3e0c4606c2}\label{classcamera__capture_1_1image__feature_ab3e24b0c312ea884bc86ef3e0c4606c2}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!radius@{radius}}
+\index{radius@{radius}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+radius\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 121 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a44e3dd7424118fde34739a6c37d19b34}\label{classcamera__capture_1_1image__feature_a44e3dd7424118fde34739a6c37d19b34}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!redCnts@{redCnts}}
+\index{redCnts@{redCnts}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{redCnts}{redCnts}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+red\+Cnts = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_a079a7eb56feb86fd11a3563e2c354dda}{red\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a1f1a0d295bf03bc4a54f28668e25e191}{red\+Upper}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 101 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a36e74ae8e266f1401a10a928de3e156e}\label{classcamera__capture_1_1image__feature_a36e74ae8e266f1401a10a928de3e156e}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{subscriber}{subscriber}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+subscriber\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+subscribed topic 
+
+
+
+Definition at line 71 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_aa8af839b549bcf96e5142cbc2684f9ac}\label{classcamera__capture_1_1image__feature_aa8af839b549bcf96e5142cbc2684f9ac}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!Twist@{Twist}}
+\index{Twist@{Twist}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{Twist}{Twist}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+Twist\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 68 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_ab20773c94c8b58c93bed94891f46b7a2}\label{classcamera__capture_1_1image__feature_ab20773c94c8b58c93bed94891f46b7a2}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!vel@{vel}}
+\index{vel@{vel}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{vel}{vel}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+vel = \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa8af839b549bcf96e5142cbc2684f9ac}{Twist}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 132 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_ab13be845d8b1e653915b957197e25983}\label{classcamera__capture_1_1image__feature_ab13be845d8b1e653915b957197e25983}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!vel\_pub@{vel\_pub}}
+\index{vel\_pub@{vel\_pub}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{vel\_pub}{vel\_pub}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+vel\+\_\+pub\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+topic where we robot velocity commands 
+
+
+
+Definition at line 67 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a3cf2fa68e759ee33f8b52c02a2fe5302}\label{classcamera__capture_1_1image__feature_a3cf2fa68e759ee33f8b52c02a2fe5302}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!x@{x}}
+\index{x@{x}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+x\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 134 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a1eed235bf266d7034b7e11bcc925c40b}\label{classcamera__capture_1_1image__feature_a1eed235bf266d7034b7e11bcc925c40b}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!yellowCnts@{yellowCnts}}
+\index{yellowCnts@{yellowCnts}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{yellowCnts}{yellowCnts}}
+{\footnotesize\ttfamily def camera\+\_\+capture.\+image\+\_\+feature.\+yellow\+Cnts = \mbox{\hyperlink{classcamera__capture_1_1image__feature_af806966b5ecf9e8cdd9e7139b7f5121a}{image\+\_\+feature.\+contours}}(self, \mbox{\hyperlink{classcamera__capture_1_1image__feature_aa09b99292e62818f171acea3520bfe00}{hsv}}, \mbox{\hyperlink{namespacecamera__capture_aedb679e2187f805f89d90676eeeef7ad}{yellow\+Lower}}, \mbox{\hyperlink{namespacecamera__capture_a0bb5e95f788427a604df6ac9cce8ee88}{yellow\+Upper}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 103 of file camera\+\_\+capture.\+py.
+
+\mbox{\Hypertarget{classcamera__capture_1_1image__feature_a6fc261c7190483591bc9969f13ab3d7f}\label{classcamera__capture_1_1image__feature_a6fc261c7190483591bc9969f13ab3d7f}} 
+\index{camera\_capture.image\_feature@{camera\_capture.image\_feature}!z@{z}}
+\index{z@{z}!camera\_capture.image\_feature@{camera\_capture.image\_feature}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily camera\+\_\+capture.\+image\+\_\+feature.\+z\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 133 of file camera\+\_\+capture.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{camera__capture_8py}{camera\+\_\+capture.\+py}}\end{DoxyCompactItemize}

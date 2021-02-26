@@ -1,0 +1,179 @@
+\hypertarget{classfrontier__exploration_1_1_frontier_search}{}\doxysection{frontier\+\_\+exploration\+::Frontier\+Search Class Reference}
+\label{classfrontier__exploration_1_1_frontier_search}\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+
+
+Thread-\/safe implementation of a frontier-\/search task for an input costmap.  
+
+
+
+
+{\ttfamily \#include $<$frontier\+\_\+search.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search_a3396c0bfc5f1c545ae4be16068eeb620}{Frontier\+Search}} ()
+\item 
+\mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search_a0d07b12823e27600de8405d652e9a69a}{Frontier\+Search}} (costmap\+\_\+2d\+::\+Costmap2D $\ast$costmap, double potential\+\_\+scale, double gain\+\_\+scale, double min\+\_\+frontier\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Constructor for search task. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} $>$ \mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search_ac28ed3ce13ab687ed002f74338189f48}{search\+From}} (geometry\+\_\+msgs\+::\+Point position)
+\begin{DoxyCompactList}\small\item\em Runs search implementation, outward from the start position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} \mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search_a03ab2174fbd43e117cd816aade7d3b38}{build\+New\+Frontier}} (unsigned int initial\+\_\+cell, unsigned int reference, std\+::vector$<$ bool $>$ \&frontier\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Starting from an initial cell, build a frontier from valid adjacent cells. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search_a4fc0a3e7d14dd1bcab5aa67bae684350}{is\+New\+Frontier\+Cell}} (unsigned int idx, const std\+::vector$<$ bool $>$ \&frontier\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em is\+New\+Frontier\+Cell Evaluate if candidate cell is a valid candidate for a new frontier. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search_a46cf94258988537430a3425140803e59}{frontier\+Cost}} (const \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} \&frontier)
+\begin{DoxyCompactList}\small\item\em computes frontier cost \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Thread-\/safe implementation of a frontier-\/search task for an input costmap. 
+
+Definition at line 30 of file frontier\+\_\+search.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfrontier__exploration_1_1_frontier_search_a3396c0bfc5f1c545ae4be16068eeb620}\label{classfrontier__exploration_1_1_frontier_search_a3396c0bfc5f1c545ae4be16068eeb620}} 
+\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}!FrontierSearch@{FrontierSearch}}
+\index{FrontierSearch@{FrontierSearch}!frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+\doxysubsubsection{\texorpdfstring{FrontierSearch()}{FrontierSearch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily frontier\+\_\+exploration\+::\+Frontier\+Search\+::\+Frontier\+Search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file frontier\+\_\+search.\+h.
+
+\mbox{\Hypertarget{classfrontier__exploration_1_1_frontier_search_a0d07b12823e27600de8405d652e9a69a}\label{classfrontier__exploration_1_1_frontier_search_a0d07b12823e27600de8405d652e9a69a}} 
+\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}!FrontierSearch@{FrontierSearch}}
+\index{FrontierSearch@{FrontierSearch}!frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+\doxysubsubsection{\texorpdfstring{FrontierSearch()}{FrontierSearch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily frontier\+\_\+exploration\+::\+Frontier\+Search\+::\+Frontier\+Search (\begin{DoxyParamCaption}\item[{costmap\+\_\+2d\+::\+Costmap2D $\ast$}]{costmap,  }\item[{double}]{potential\+\_\+scale,  }\item[{double}]{gain\+\_\+scale,  }\item[{double}]{min\+\_\+frontier\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Constructor for search task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em costmap} & Reference to costmap data to search \\
+\hline
+{\em potential\+\_\+scale} & Defines, along with gain\+\_\+scale, the cost function \\
+\hline
+{\em gain\+\_\+scale} & Defines, along with potential\+\_\+scale, the cost function \\
+\hline
+{\em min\+\_\+frontier\+\_\+size} & Specifies the minimum frontier size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file frontier\+\_\+search.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfrontier__exploration_1_1_frontier_search_a03ab2174fbd43e117cd816aade7d3b38}\label{classfrontier__exploration_1_1_frontier_search_a03ab2174fbd43e117cd816aade7d3b38}} 
+\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}!buildNewFrontier@{buildNewFrontier}}
+\index{buildNewFrontier@{buildNewFrontier}!frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+\doxysubsubsection{\texorpdfstring{buildNewFrontier()}{buildNewFrontier()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} frontier\+\_\+exploration\+::\+Frontier\+Search\+::build\+New\+Frontier (\begin{DoxyParamCaption}\item[{unsigned int}]{initial\+\_\+cell,  }\item[{unsigned int}]{reference,  }\item[{std\+::vector$<$ bool $>$ \&}]{frontier\+\_\+flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Starting from an initial cell, build a frontier from valid adjacent cells. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+cell} & Index of cell to start frontier building \\
+\hline
+{\em reference} & Reference index to calculate position from \\
+\hline
+{\em frontier\+\_\+flag} & Flag vector indicating which cells are already marked as frontiers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new frontier 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file frontier\+\_\+search.\+cpp.
+
+\mbox{\Hypertarget{classfrontier__exploration_1_1_frontier_search_a46cf94258988537430a3425140803e59}\label{classfrontier__exploration_1_1_frontier_search_a46cf94258988537430a3425140803e59}} 
+\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}!frontierCost@{frontierCost}}
+\index{frontierCost@{frontierCost}!frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+\doxysubsubsection{\texorpdfstring{frontierCost()}{frontierCost()}}
+{\footnotesize\ttfamily double frontier\+\_\+exploration\+::\+Frontier\+Search\+::frontier\+Cost (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} \&}]{frontier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+computes frontier cost 
+
+cost function is defined by potential\+\_\+scale and gain\+\_\+scale
+
+
+\begin{DoxyParams}{Parameters}
+{\em frontier} & frontier for which compute the cost \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cost of the frontier 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file frontier\+\_\+search.\+cpp.
+
+\mbox{\Hypertarget{classfrontier__exploration_1_1_frontier_search_a4fc0a3e7d14dd1bcab5aa67bae684350}\label{classfrontier__exploration_1_1_frontier_search_a4fc0a3e7d14dd1bcab5aa67bae684350}} 
+\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}!isNewFrontierCell@{isNewFrontierCell}}
+\index{isNewFrontierCell@{isNewFrontierCell}!frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+\doxysubsubsection{\texorpdfstring{isNewFrontierCell()}{isNewFrontierCell()}}
+{\footnotesize\ttfamily bool frontier\+\_\+exploration\+::\+Frontier\+Search\+::is\+New\+Frontier\+Cell (\begin{DoxyParamCaption}\item[{unsigned int}]{idx,  }\item[{const std\+::vector$<$ bool $>$ \&}]{frontier\+\_\+flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+is\+New\+Frontier\+Cell Evaluate if candidate cell is a valid candidate for a new frontier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & Index of candidate cell \\
+\hline
+{\em frontier\+\_\+flag} & Flag vector indicating which cells are already marked as frontiers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cell is frontier cell 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file frontier\+\_\+search.\+cpp.
+
+\mbox{\Hypertarget{classfrontier__exploration_1_1_frontier_search_ac28ed3ce13ab687ed002f74338189f48}\label{classfrontier__exploration_1_1_frontier_search_ac28ed3ce13ab687ed002f74338189f48}} 
+\index{frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}!searchFrom@{searchFrom}}
+\index{searchFrom@{searchFrom}!frontier\_exploration::FrontierSearch@{frontier\_exploration::FrontierSearch}}
+\doxysubsubsection{\texorpdfstring{searchFrom()}{searchFrom()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} $>$ frontier\+\_\+exploration\+::\+Frontier\+Search\+::search\+From (\begin{DoxyParamCaption}\item[{geometry\+\_\+msgs\+::\+Point}]{position }\end{DoxyParamCaption})}
+
+
+
+Runs search implementation, outward from the start position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Initial position to search from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of frontiers, if any 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file frontier\+\_\+search.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{frontier__search_8h}{frontier\+\_\+search.\+h}}\item 
+src/\mbox{\hyperlink{frontier__search_8cpp}{frontier\+\_\+search.\+cpp}}\end{DoxyCompactItemize}

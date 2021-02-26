@@ -1,0 +1,188 @@
+\hypertarget{namespacestate__machine}{}\doxysection{state\+\_\+machine Namespace Reference}
+\label{namespacestate__machine}\index{state\_machine@{state\_machine}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classstate__machine_1_1_find}{Find}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstate__machine_1_1_find}{Find}} state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstate__machine_1_1_normal}{Normal}}
+\item 
+class \mbox{\hyperlink{classstate__machine_1_1_play}{Play}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstate__machine_1_1_play}{Play}} state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classstate__machine_1_1_sleep}{Sleep}}
+\begin{DoxyCompactList}\small\item\em define state \mbox{\hyperlink{classstate__machine_1_1_sleep}{Sleep}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacestate__machine_a5c680ce705e6052fa07c6cece21743d0}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a9243706ebe75377ac9a5751eff3b4241}{x\+\_\+lim\+\_\+max}} = 9
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a7933400f0942b4c17a6df5fd4d4688e9}{y\+\_\+lim\+\_\+max}} = 9
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a94b7f96f31062ab33f081f8fe78a1b2c}{x\+\_\+lim\+\_\+min}} = -\/9
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a10c3b80702bb6cbd1851ed3fca71dc1a}{y\+\_\+lim\+\_\+min}} = -\/9
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a90cb711c5d2f928633c74503889231de}{home\+\_\+position\+\_\+x}} = -\/5
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a8d19a6b8a76a260a08eafae3b27b0468}{home\+\_\+position\+\_\+y}} = 8
+\item 
+list \mbox{\hyperlink{namespacestate__machine_a29cea846277dd4202cc5ccdc3d1bfc05}{room\+\_\+list}} = \mbox{[}\textquotesingle{}entrance\textquotesingle{}, \textquotesingle{}closet\textquotesingle{}, \textquotesingle{}livingroom\textquotesingle{},\textquotesingle{}kitchen\textquotesingle{}, \textquotesingle{}bathroom\textquotesingle{}, \textquotesingle{}bedroom\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacestate__machine_af7e9ea5aeca1334816ee33e8da8fec04}{sim\+\_\+scale}} = rospy.\+get\+\_\+param(\textquotesingle{}sim\+\_\+scale\textquotesingle{})
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a1d648dab3b533da6e205029b4fb6ae99}{itr}} = 1
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a16ce2557ea2c508f78081d747dd4a123}{is\+\_\+play\+\_\+state}} = 0
+\item 
+int \mbox{\hyperlink{namespacestate__machine_a4ba713245d7cff21d2f501d307d85f02}{room\+\_\+type}} = 100
+\item 
+\mbox{\hyperlink{namespacestate__machine_ae366691839100580b630592ba2a76d0f}{counter\+\_\+time}} = random.\+randint(2, 7)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacestate__machine_a5c680ce705e6052fa07c6cece21743d0}\label{namespacestate__machine_a5c680ce705e6052fa07c6cece21743d0}} 
+\index{state\_machine@{state\_machine}!main@{main}}
+\index{main@{main}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This class is the main class
+    
+This class defines the relation of each state parameters to corresponding 
+states.From the sleep state , the robot moves to Normal state.From the 
+normal state the robot can move to either Sleep state or PLay state.And 
+from the Play state the robot moves back to normal state or Find state.
+From the Find state the robot shifts back to the play state\end{DoxyVerb}
+ 
+
+Definition at line 400 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacestate__machine_ae366691839100580b630592ba2a76d0f}\label{namespacestate__machine_ae366691839100580b630592ba2a76d0f}} 
+\index{state\_machine@{state\_machine}!counter\_time@{counter\_time}}
+\index{counter\_time@{counter\_time}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{counter\_time}{counter\_time}}
+{\footnotesize\ttfamily state\+\_\+machine.\+counter\+\_\+time = random.\+randint(2, 7)}
+
+
+
+Definition at line 49 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a90cb711c5d2f928633c74503889231de}\label{namespacestate__machine_a90cb711c5d2f928633c74503889231de}} 
+\index{state\_machine@{state\_machine}!home\_position\_x@{home\_position\_x}}
+\index{home\_position\_x@{home\_position\_x}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{home\_position\_x}{home\_position\_x}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+home\+\_\+position\+\_\+x = -\/5}
+
+
+
+Definition at line 35 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a8d19a6b8a76a260a08eafae3b27b0468}\label{namespacestate__machine_a8d19a6b8a76a260a08eafae3b27b0468}} 
+\index{state\_machine@{state\_machine}!home\_position\_y@{home\_position\_y}}
+\index{home\_position\_y@{home\_position\_y}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{home\_position\_y}{home\_position\_y}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+home\+\_\+position\+\_\+y = 8}
+
+
+
+Definition at line 36 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a16ce2557ea2c508f78081d747dd4a123}\label{namespacestate__machine_a16ce2557ea2c508f78081d747dd4a123}} 
+\index{state\_machine@{state\_machine}!is\_play\_state@{is\_play\_state}}
+\index{is\_play\_state@{is\_play\_state}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{is\_play\_state}{is\_play\_state}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+is\+\_\+play\+\_\+state = 0}
+
+
+
+Definition at line 47 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a1d648dab3b533da6e205029b4fb6ae99}\label{namespacestate__machine_a1d648dab3b533da6e205029b4fb6ae99}} 
+\index{state\_machine@{state\_machine}!itr@{itr}}
+\index{itr@{itr}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{itr}{itr}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+itr = 1}
+
+
+
+Definition at line 46 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a29cea846277dd4202cc5ccdc3d1bfc05}\label{namespacestate__machine_a29cea846277dd4202cc5ccdc3d1bfc05}} 
+\index{state\_machine@{state\_machine}!room\_list@{room\_list}}
+\index{room\_list@{room\_list}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{room\_list}{room\_list}}
+{\footnotesize\ttfamily list state\+\_\+machine.\+room\+\_\+list = \mbox{[}\textquotesingle{}entrance\textquotesingle{}, \textquotesingle{}closet\textquotesingle{}, \textquotesingle{}livingroom\textquotesingle{},\textquotesingle{}kitchen\textquotesingle{}, \textquotesingle{}bathroom\textquotesingle{}, \textquotesingle{}bedroom\textquotesingle{}\mbox{]}}
+
+
+
+Definition at line 40 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a4ba713245d7cff21d2f501d307d85f02}\label{namespacestate__machine_a4ba713245d7cff21d2f501d307d85f02}} 
+\index{state\_machine@{state\_machine}!room\_type@{room\_type}}
+\index{room\_type@{room\_type}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{room\_type}{room\_type}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+room\+\_\+type = 100}
+
+
+
+Definition at line 48 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_af7e9ea5aeca1334816ee33e8da8fec04}\label{namespacestate__machine_af7e9ea5aeca1334816ee33e8da8fec04}} 
+\index{state\_machine@{state\_machine}!sim\_scale@{sim\_scale}}
+\index{sim\_scale@{sim\_scale}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{sim\_scale}{sim\_scale}}
+{\footnotesize\ttfamily state\+\_\+machine.\+sim\+\_\+scale = rospy.\+get\+\_\+param(\textquotesingle{}sim\+\_\+scale\textquotesingle{})}
+
+
+
+Definition at line 43 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a9243706ebe75377ac9a5751eff3b4241}\label{namespacestate__machine_a9243706ebe75377ac9a5751eff3b4241}} 
+\index{state\_machine@{state\_machine}!x\_lim\_max@{x\_lim\_max}}
+\index{x\_lim\_max@{x\_lim\_max}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{x\_lim\_max}{x\_lim\_max}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+x\+\_\+lim\+\_\+max = 9}
+
+
+
+Definition at line 24 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a94b7f96f31062ab33f081f8fe78a1b2c}\label{namespacestate__machine_a94b7f96f31062ab33f081f8fe78a1b2c}} 
+\index{state\_machine@{state\_machine}!x\_lim\_min@{x\_lim\_min}}
+\index{x\_lim\_min@{x\_lim\_min}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{x\_lim\_min}{x\_lim\_min}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+x\+\_\+lim\+\_\+min = -\/9}
+
+
+
+Definition at line 29 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a7933400f0942b4c17a6df5fd4d4688e9}\label{namespacestate__machine_a7933400f0942b4c17a6df5fd4d4688e9}} 
+\index{state\_machine@{state\_machine}!y\_lim\_max@{y\_lim\_max}}
+\index{y\_lim\_max@{y\_lim\_max}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{y\_lim\_max}{y\_lim\_max}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+y\+\_\+lim\+\_\+max = 9}
+
+
+
+Definition at line 25 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{namespacestate__machine_a10c3b80702bb6cbd1851ed3fca71dc1a}\label{namespacestate__machine_a10c3b80702bb6cbd1851ed3fca71dc1a}} 
+\index{state\_machine@{state\_machine}!y\_lim\_min@{y\_lim\_min}}
+\index{y\_lim\_min@{y\_lim\_min}!state\_machine@{state\_machine}}
+\doxysubsubsection{\texorpdfstring{y\_lim\_min}{y\_lim\_min}}
+{\footnotesize\ttfamily int state\+\_\+machine.\+y\+\_\+lim\+\_\+min = -\/9}
+
+
+
+Definition at line 30 of file state\+\_\+machine.\+py.
+

@@ -1,0 +1,20 @@
+\hypertarget{costmap__tools_8h}{}\doxysection{include/costmap\+\_\+tools.h File Reference}
+\label{costmap__tools_8h}\index{include/costmap\_tools.h@{include/costmap\_tools.h}}
+{\ttfamily \#include $<$costmap\+\_\+2d/costmap\+\_\+2d.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Point\+Stamped.\+h$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/\+Polygon\+Stamped.\+h$>$}\newline
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacefrontier__exploration}{frontier\+\_\+exploration}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} exploration namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{namespacefrontier__exploration_affc5c02b52db13456c62dc5f707efa6f}{frontier\+\_\+exploration\+::nhood4}} (unsigned int idx, const costmap\+\_\+2d\+::\+Costmap2D \&costmap)
+\begin{DoxyCompactList}\small\item\em Determine 4-\/connected neighbourhood of an input cell, checking for map edges. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{namespacefrontier__exploration_aff5530dc70914d4cfde4f455ecaa0cd6}{frontier\+\_\+exploration\+::nhood8}} (unsigned int idx, const costmap\+\_\+2d\+::\+Costmap2D \&costmap)
+\begin{DoxyCompactList}\small\item\em Determine 8-\/connected neighbourhood of an input cell, checking for map edges. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacefrontier__exploration_a1919c053e430083b7fb366501fff518c}{frontier\+\_\+exploration\+::nearest\+Cell}} (unsigned int \&result, unsigned int start, unsigned char val, const costmap\+\_\+2d\+::\+Costmap2D \&costmap)
+\begin{DoxyCompactList}\small\item\em Find nearest cell of a specified value. \end{DoxyCompactList}\end{DoxyCompactItemize}

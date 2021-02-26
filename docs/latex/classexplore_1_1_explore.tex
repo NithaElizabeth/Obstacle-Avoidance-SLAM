@@ -1,0 +1,145 @@
+\hypertarget{classexplore_1_1_explore}{}\doxysection{explore\+::Explore Class Reference}
+\label{classexplore_1_1_explore}\index{explore::Explore@{explore::Explore}}
+
+
+A class adhering to the robot\+\_\+actions\+::\+Action interface that moves the robot base to explore its environment.  
+
+
+
+
+{\ttfamily \#include $<$explore.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexplore_1_1_explore_a25c9e2c8405191f3df7f86216daa7654}{Explore}} ()
+\item 
+\mbox{\hyperlink{classexplore_1_1_explore_afed6d2d29f9b51d78c9b594204518631}{$\sim$\+Explore}} ()
+\item 
+void \mbox{\hyperlink{classexplore_1_1_explore_add4e807fa7294de7c23bc69df2b17016}{start}} ()
+\begin{DoxyCompactList}\small\item\em Method starting algorithm execution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexplore_1_1_explore_a7bfe8dd552d3816166e7ff32aaee47b6}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Method stopping algorithm execution. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexplore_1_1_explore_a0667420715eedc4988513e1c8265b5e4}{srv\+\_\+start}} (exp\+\_\+assignment3\+::\+Explore\+::\+Request \&req, exp\+\_\+assignment3\+::\+Explore\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Exploration algorithm start service server declaration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexplore_1_1_explore_a991754d441aaa595fdbdc36529bf0dad}{srv\+\_\+stop}} (exp\+\_\+assignment3\+::\+Explore\+::\+Request \&req, exp\+\_\+assignment3\+::\+Explore\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Exploration algorithm stop service server declaration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classexplore_1_1_explore_abb76c17d6e8943567b18079f07534dcb}{first\+\_\+run}} \{1\}
+\begin{DoxyCompactList}\small\item\em Variable used to prevent the algorithm from running at launch; it will instead wait for a service client call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class adhering to the robot\+\_\+actions\+::\+Action interface that moves the robot base to explore its environment. 
+
+Here I added the two service server declarations. The remaining changes I made are all in \mbox{\hyperlink{explore_8cpp}{explore.\+cpp}} 
+
+Definition at line 34 of file explore.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexplore_1_1_explore_a25c9e2c8405191f3df7f86216daa7654}\label{classexplore_1_1_explore_a25c9e2c8405191f3df7f86216daa7654}} 
+\index{explore::Explore@{explore::Explore}!Explore@{Explore}}
+\index{Explore@{Explore}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{Explore()}{Explore()}}
+{\footnotesize\ttfamily explore\+::\+Explore\+::\+Explore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file explore.\+cpp.
+
+\mbox{\Hypertarget{classexplore_1_1_explore_afed6d2d29f9b51d78c9b594204518631}\label{classexplore_1_1_explore_afed6d2d29f9b51d78c9b594204518631}} 
+\index{explore::Explore@{explore::Explore}!````~Explore@{$\sim$Explore}}
+\index{````~Explore@{$\sim$Explore}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{$\sim$Explore()}{~Explore()}}
+{\footnotesize\ttfamily explore\+::\+Explore\+::$\sim$\+Explore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file explore.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classexplore_1_1_explore_a0667420715eedc4988513e1c8265b5e4}\label{classexplore_1_1_explore_a0667420715eedc4988513e1c8265b5e4}} 
+\index{explore::Explore@{explore::Explore}!srv\_start@{srv\_start}}
+\index{srv\_start@{srv\_start}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{srv\_start()}{srv\_start()}}
+{\footnotesize\ttfamily bool explore\+::\+Explore\+::srv\+\_\+start (\begin{DoxyParamCaption}\item[{exp\+\_\+assignment3\+::\+Explore\+::\+Request \&}]{req,  }\item[{exp\+\_\+assignment3\+::\+Explore\+::\+Response \&}]{loc }\end{DoxyParamCaption})}
+
+
+
+Exploration algorithm start service server declaration. 
+
+A start service server 
+
+Definition at line 306 of file explore.\+cpp.
+
+\mbox{\Hypertarget{classexplore_1_1_explore_a991754d441aaa595fdbdc36529bf0dad}\label{classexplore_1_1_explore_a991754d441aaa595fdbdc36529bf0dad}} 
+\index{explore::Explore@{explore::Explore}!srv\_stop@{srv\_stop}}
+\index{srv\_stop@{srv\_stop}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{srv\_stop()}{srv\_stop()}}
+{\footnotesize\ttfamily bool explore\+::\+Explore\+::srv\+\_\+stop (\begin{DoxyParamCaption}\item[{exp\+\_\+assignment3\+::\+Explore\+::\+Request \&}]{req,  }\item[{exp\+\_\+assignment3\+::\+Explore\+::\+Response \&}]{loc }\end{DoxyParamCaption})}
+
+
+
+Exploration algorithm stop service server declaration. 
+
+A stop service server 
+
+Definition at line 317 of file explore.\+cpp.
+
+\mbox{\Hypertarget{classexplore_1_1_explore_add4e807fa7294de7c23bc69df2b17016}\label{classexplore_1_1_explore_add4e807fa7294de7c23bc69df2b17016}} 
+\index{explore::Explore@{explore::Explore}!start@{start}}
+\index{start@{start}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void explore\+::\+Explore\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method starting algorithm execution. 
+
+
+
+Definition at line 292 of file explore.\+cpp.
+
+\mbox{\Hypertarget{classexplore_1_1_explore_a7bfe8dd552d3816166e7ff32aaee47b6}\label{classexplore_1_1_explore_a7bfe8dd552d3816166e7ff32aaee47b6}} 
+\index{explore::Explore@{explore::Explore}!stop@{stop}}
+\index{stop@{stop}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void explore\+::\+Explore\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method stopping algorithm execution. 
+
+
+
+Definition at line 297 of file explore.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classexplore_1_1_explore_abb76c17d6e8943567b18079f07534dcb}\label{classexplore_1_1_explore_abb76c17d6e8943567b18079f07534dcb}} 
+\index{explore::Explore@{explore::Explore}!first\_run@{first\_run}}
+\index{first\_run@{first\_run}!explore::Explore@{explore::Explore}}
+\doxysubsubsection{\texorpdfstring{first\_run}{first\_run}}
+{\footnotesize\ttfamily int explore\+::\+Explore\+::first\+\_\+run \{1\}}
+
+
+
+Variable used to prevent the algorithm from running at launch; it will instead wait for a service client call. 
+
+
+
+Definition at line 64 of file explore.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{explore_8h}{explore.\+h}}\item 
+src/\mbox{\hyperlink{explore_8cpp}{explore.\+cpp}}\end{DoxyCompactItemize}

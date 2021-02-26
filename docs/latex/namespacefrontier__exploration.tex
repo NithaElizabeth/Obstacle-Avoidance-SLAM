@@ -1,0 +1,105 @@
+\hypertarget{namespacefrontier__exploration}{}\doxysection{frontier\+\_\+exploration Namespace Reference}
+\label{namespacefrontier__exploration}\index{frontier\_exploration@{frontier\_exploration}}
+
+
+\mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} exploration namespace.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}}
+\begin{DoxyCompactList}\small\item\em Represents a frontier. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfrontier__exploration_1_1_frontier_search}{Frontier\+Search}}
+\begin{DoxyCompactList}\small\item\em Thread-\/safe implementation of a frontier-\/search task for an input costmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{namespacefrontier__exploration_affc5c02b52db13456c62dc5f707efa6f}{nhood4}} (unsigned int idx, const costmap\+\_\+2d\+::\+Costmap2D \&costmap)
+\begin{DoxyCompactList}\small\item\em Determine 4-\/connected neighbourhood of an input cell, checking for map edges. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{namespacefrontier__exploration_aff5530dc70914d4cfde4f455ecaa0cd6}{nhood8}} (unsigned int idx, const costmap\+\_\+2d\+::\+Costmap2D \&costmap)
+\begin{DoxyCompactList}\small\item\em Determine 8-\/connected neighbourhood of an input cell, checking for map edges. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacefrontier__exploration_a1919c053e430083b7fb366501fff518c}{nearest\+Cell}} (unsigned int \&result, unsigned int start, unsigned char val, const costmap\+\_\+2d\+::\+Costmap2D \&costmap)
+\begin{DoxyCompactList}\small\item\em Find nearest cell of a specified value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{structfrontier__exploration_1_1_frontier}{Frontier}} exploration namespace. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefrontier__exploration_a1919c053e430083b7fb366501fff518c}\label{namespacefrontier__exploration_a1919c053e430083b7fb366501fff518c}} 
+\index{frontier\_exploration@{frontier\_exploration}!nearestCell@{nearestCell}}
+\index{nearestCell@{nearestCell}!frontier\_exploration@{frontier\_exploration}}
+\doxysubsubsection{\texorpdfstring{nearestCell()}{nearestCell()}}
+{\footnotesize\ttfamily bool frontier\+\_\+exploration\+::nearest\+Cell (\begin{DoxyParamCaption}\item[{unsigned int \&}]{result,  }\item[{unsigned int}]{start,  }\item[{unsigned char}]{val,  }\item[{const costmap\+\_\+2d\+::\+Costmap2D \&}]{costmap }\end{DoxyParamCaption})}
+
+
+
+Find nearest cell of a specified value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & Index of located cell \\
+\hline
+{\em start} & Index initial cell to search from \\
+\hline
+{\em val} & Specified value to search for \\
+\hline
+{\em costmap} & Reference to map data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a cell with the requested value was found 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file costmap\+\_\+tools.\+h.
+
+\mbox{\Hypertarget{namespacefrontier__exploration_affc5c02b52db13456c62dc5f707efa6f}\label{namespacefrontier__exploration_affc5c02b52db13456c62dc5f707efa6f}} 
+\index{frontier\_exploration@{frontier\_exploration}!nhood4@{nhood4}}
+\index{nhood4@{nhood4}!frontier\_exploration@{frontier\_exploration}}
+\doxysubsubsection{\texorpdfstring{nhood4()}{nhood4()}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned int$>$ frontier\+\_\+exploration\+::nhood4 (\begin{DoxyParamCaption}\item[{unsigned int}]{idx,  }\item[{const costmap\+\_\+2d\+::\+Costmap2D \&}]{costmap }\end{DoxyParamCaption})}
+
+
+
+Determine 4-\/connected neighbourhood of an input cell, checking for map edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & input cell index \\
+\hline
+{\em costmap} & Reference to map data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+neighbour cell indexes 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file costmap\+\_\+tools.\+h.
+
+\mbox{\Hypertarget{namespacefrontier__exploration_aff5530dc70914d4cfde4f455ecaa0cd6}\label{namespacefrontier__exploration_aff5530dc70914d4cfde4f455ecaa0cd6}} 
+\index{frontier\_exploration@{frontier\_exploration}!nhood8@{nhood8}}
+\index{nhood8@{nhood8}!frontier\_exploration@{frontier\_exploration}}
+\doxysubsubsection{\texorpdfstring{nhood8()}{nhood8()}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned int$>$ frontier\+\_\+exploration\+::nhood8 (\begin{DoxyParamCaption}\item[{unsigned int}]{idx,  }\item[{const costmap\+\_\+2d\+::\+Costmap2D \&}]{costmap }\end{DoxyParamCaption})}
+
+
+
+Determine 8-\/connected neighbourhood of an input cell, checking for map edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & input cell index \\
+\hline
+{\em costmap} & Reference to map data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+neighbour cell indexes 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file costmap\+\_\+tools.\+h.
+

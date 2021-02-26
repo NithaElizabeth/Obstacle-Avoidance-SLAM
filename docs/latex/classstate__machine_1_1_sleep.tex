@@ -1,0 +1,83 @@
+\hypertarget{classstate__machine_1_1_sleep}{}\doxysection{state\+\_\+machine.\+Sleep Class Reference}
+\label{classstate__machine_1_1_sleep}\index{state\_machine.Sleep@{state\_machine.Sleep}}
+
+
+define state \mbox{\hyperlink{classstate__machine_1_1_sleep}{Sleep}}  
+
+
+Inheritance diagram for state\+\_\+machine.\+Sleep\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstate__machine_1_1_sleep}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_sleep_a473b93a1ddf11f9e664d1fb694ce1a3c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_sleep_a89527836f1edcefb6467fa9c041fbbfe}{execute}} (self, userdata)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+define state \mbox{\hyperlink{classstate__machine_1_1_sleep}{Sleep}} 
+
+\begin{DoxyVerb}This class defines the state Sleep
+    
+This is the state in which robots return to home position and does 
+not indulge in any activities. The robot navigates using the move_base 
+algorithm.
+An action client is used to reach the corresponding coordinates
+
+Methods
+----------
+_init_(self)
+        This methods initialises all the attributes of this class
+execute(self,userdata)
+        This methods executes the sleep state in which the robot moves to its home position from its current location
+        
+    Attributes
+    ----------
+    home_position
+        A  variable of MoveBaseGoal() to store the target position
+    itr
+        To keep the track of iterations
+    move_base_sleep
+        A move_base client to send the home location
+\end{DoxyVerb}
+ 
+
+Definition at line 54 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_sleep_a473b93a1ddf11f9e664d1fb694ce1a3c}\label{classstate__machine_1_1_sleep_a473b93a1ddf11f9e664d1fb694ce1a3c}} 
+\index{state\_machine.Sleep@{state\_machine.Sleep}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!state\_machine.Sleep@{state\_machine.Sleep}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Sleep.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_sleep_a89527836f1edcefb6467fa9c041fbbfe}\label{classstate__machine_1_1_sleep_a89527836f1edcefb6467fa9c041fbbfe}} 
+\index{state\_machine.Sleep@{state\_machine.Sleep}!execute@{execute}}
+\index{execute@{execute}!state\_machine.Sleep@{state\_machine.Sleep}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Sleep.\+execute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{userdata }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file state\+\_\+machine.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{state__machine_8py}{state\+\_\+machine.\+py}}\end{DoxyCompactItemize}

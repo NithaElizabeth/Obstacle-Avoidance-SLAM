@@ -1,0 +1,93 @@
+\hypertarget{classstate__machine_1_1_normal}{}\doxysection{state\+\_\+machine.\+Normal Class Reference}
+\label{classstate__machine_1_1_normal}\index{state\_machine.Normal@{state\_machine.Normal}}
+Inheritance diagram for state\+\_\+machine.\+Normal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstate__machine_1_1_normal}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_normal_acdbc35a37d0350d7805a628048bc3bed}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_normal_a2930df5f4890ec4b47b2a8e18f9bff08}{execute}} (self, userdata)
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_normal_a1c13dfd8e60186596abcab1494943c21}{normal\+\_\+callback}} (self, data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class defines the state Normal
+    
+This is the state in which robots moves randomly in the house using 
+move_base and is willing to listen to its operators commands. Hence 
+its subscribes to the verbal_interaction node.
+On detecting a ball, the robot stores the position of the ball 
+and correspondingly to the room.
+The robot changes the state to PLAY on the verbal command or it 
+changes the state to SLEEP randomly after some time
+
+Methods
+----------
+_init_(self)
+        This methods initialises all the attributes of this class
+execute(self,userdata)
+        This methods executes the normal state in which the robot moves
+        randomly until it gets a play command
+    normal_callback(self,data)
+        This is the normal state's call back function.It acknoledge the 
+        play command
+        
+    Attributes
+    ----------
+    home_position
+        A  variable of MoveBaseGoal() to store the target position
+    move_base_normal
+        A  move_base client to send the goal location
+\end{DoxyVerb}
+ 
+
+Definition at line 117 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_normal_acdbc35a37d0350d7805a628048bc3bed}\label{classstate__machine_1_1_normal_acdbc35a37d0350d7805a628048bc3bed}} 
+\index{state\_machine.Normal@{state\_machine.Normal}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!state\_machine.Normal@{state\_machine.Normal}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Normal.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 151 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_normal_a2930df5f4890ec4b47b2a8e18f9bff08}\label{classstate__machine_1_1_normal_a2930df5f4890ec4b47b2a8e18f9bff08}} 
+\index{state\_machine.Normal@{state\_machine.Normal}!execute@{execute}}
+\index{execute@{execute}!state\_machine.Normal@{state\_machine.Normal}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Normal.\+execute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{userdata }\end{DoxyParamCaption})}
+
+
+
+Definition at line 158 of file state\+\_\+machine.\+py.
+
+\mbox{\Hypertarget{classstate__machine_1_1_normal_a1c13dfd8e60186596abcab1494943c21}\label{classstate__machine_1_1_normal_a1c13dfd8e60186596abcab1494943c21}} 
+\index{state\_machine.Normal@{state\_machine.Normal}!normal\_callback@{normal\_callback}}
+\index{normal\_callback@{normal\_callback}!state\_machine.Normal@{state\_machine.Normal}}
+\doxysubsubsection{\texorpdfstring{normal\_callback()}{normal\_callback()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Normal.\+normal\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 203 of file state\+\_\+machine.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{state__machine_8py}{state\+\_\+machine.\+py}}\end{DoxyCompactItemize}

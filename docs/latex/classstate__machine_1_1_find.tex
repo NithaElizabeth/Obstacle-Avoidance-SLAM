@@ -1,0 +1,90 @@
+\hypertarget{classstate__machine_1_1_find}{}\doxysection{state\+\_\+machine.\+Find Class Reference}
+\label{classstate__machine_1_1_find}\index{state\_machine.Find@{state\_machine.Find}}
+
+
+\mbox{\hyperlink{classstate__machine_1_1_find}{Find}} state.  
+
+
+Inheritance diagram for state\+\_\+machine.\+Find\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classstate__machine_1_1_find}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classstate__machine_1_1_find_aa7bd4d07590561e39233a3759ee25f49}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classstate__machine_1_1_find}{Find}} state initialization\+: set the outcomes. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classstate__machine_1_1_find_aa79a6408d288a202d766d86a34d26c22}{execute}} (self, userdata)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classstate__machine_1_1_find}{Find}} state. 
+
+\begin{DoxyVerb}This class defines the state Find
+    
+This is the state in which robots searches for the ball asked in the
+Play state.This state uses explorer_lite algorithm. On matching the 
+ball this state swtches back to Play state.
+The state subscribes to verbal_interaction node to get commands
+
+Methods
+----------
+_init_(self)
+        This methods initialises all the attributes of this class
+execute(self,userdata)
+        This methods executes the play state in which the robot moves to
+        its home position from its current location
+    play_callback(self,data)
+        This callback function finds the room correspondig to the ball
+        
+    Attributes
+    ----------
+    home_position
+        A  variable of MoveBaseGoal() to store the target position
+    itr
+        To keep the track of iterations
+    explore_start
+        A Explorer Flag
+\end{DoxyVerb}
+ 
+
+Definition at line 342 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_find_aa7bd4d07590561e39233a3759ee25f49}\label{classstate__machine_1_1_find_aa7bd4d07590561e39233a3759ee25f49}} 
+\index{state\_machine.Find@{state\_machine.Find}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!state\_machine.Find@{state\_machine.Find}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Find.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classstate__machine_1_1_find}{Find}} state initialization\+: set the outcomes. 
+
+
+
+Definition at line 374 of file state\+\_\+machine.\+py.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstate__machine_1_1_find_aa79a6408d288a202d766d86a34d26c22}\label{classstate__machine_1_1_find_aa79a6408d288a202d766d86a34d26c22}} 
+\index{state\_machine.Find@{state\_machine.Find}!execute@{execute}}
+\index{execute@{execute}!state\_machine.Find@{state\_machine.Find}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily def state\+\_\+machine.\+Find.\+execute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{userdata }\end{DoxyParamCaption})}
+
+
+
+Definition at line 380 of file state\+\_\+machine.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/\mbox{\hyperlink{state__machine_8py}{state\+\_\+machine.\+py}}\end{DoxyCompactItemize}
