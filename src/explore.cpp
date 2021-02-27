@@ -42,11 +42,7 @@
 #include <ros/ros.h>
 #include <exp_assignment3/Explore.h>
 
-/** 
- * @brief This is the piece of code implementing the exploration algorithm. I added a pair
- * of methods inside the class in order to provide a start & stop service server feature
- * to the original code. These servers are used by dog_fsm.py and dog_vision.py
- */
+
 
 inline static bool operator==(const geometry_msgs::Point& one,
                               const geometry_msgs::Point& two)
@@ -336,9 +332,7 @@ int main(int argc, char** argv)
     explore.stop();
   }
 
-  /** Creation of the service servers called by dog_fsm.py and dog_vision.py as
-   * methods of the Explore class
-   */
+
   ros::NodeHandle n1;
   ros::NodeHandle n2;
   ros::ServiceServer startService =
