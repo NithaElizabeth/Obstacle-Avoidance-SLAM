@@ -43,13 +43,13 @@ This component is responsible for giving the verabal orders to the robot.This ro
 
 #### The Camera Capture Node
 This component is responsible for scanning the 2-D world through which the robot travels.It will give an immediate feedback of the visuals that ideally the robot sees to the screen. This component also moves the robot to ball if the robot is in "normal" or "find" state. It also enables the robot to store the location of the newly detected coloured balls which corresponds to different rooms within the 2-D world.
-##### ROS Parameters used in state machine
+##### ROS Parameters used in Camera Capture
 * "state" - This parameter specifies the current state of the robot
 * "is_ball_found" - This parameter will be 1 if a new room is detected by the robot
 * "is_ball_known" - This parameter cheks if the ball/room is already knwon to the robot.
 * "*colour_* x" and "*colour_* y"- This parameter specifies the x and y coordinates of the different balls (The value *colour* will be replaced by different colours correspondingly e.g "blue_x")
 #### Ball 
-This server is responsible for providing the coordinates of the requested ball so as to obtain the location of the rooms.
+There is a server which is responsible for providing the coordinates of the requested ball so as to obtain the location of the rooms.
 ##### ROS Parameters used in Ball
 * "*colour_* x" and "*colour_* y"- This parameter specifies the x and y coordinates of the different balls (The value *colour* will be replaced by different colours correspondingly e.g "blue_x")
 
