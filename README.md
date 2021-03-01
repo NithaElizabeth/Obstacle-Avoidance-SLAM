@@ -1,6 +1,5 @@
-# Experimental Robotics Laboratory - Assignment 3
-
-
+# Visual SLAM and Obstacle Avoidance
+## Experimental Robotics Laboratory - Assignment 3
 ## Intoduction
 
 This repository contains the Assignment 3 of Experimental Robotics Lab.The aim of this assignment is to implement simulation for mapping and navigation using the behavioural architecure's state machine that was completed as earlier, for a pet (dog-like) robot that moves in a (house-like)discrete 2D envirionment.
