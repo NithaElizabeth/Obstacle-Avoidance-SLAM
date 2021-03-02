@@ -1,6 +1,7 @@
 # Visual SLAM and Obstacle Avoidance
 #### Experimental Robotics Laboratory - Assignment 3
 ## Intoduction
+![video_gif_short](https://user-images.githubusercontent.com/47361086/109709063-8ffdbd00-7bb5-11eb-94e7-07f42bcc7da4.gif)
 
 This repository contains the Assignment 3 of Experimental Robotics Lab.The aim of this assignment is to implement simulation for mapping and navigation using the behavioural architecure's state machine that was completed as earlier, for a pet (dog-like) robot that moves in a (house-like)discrete 2D envirionment.
 The architecture involves nodes for verbal interaction, capturing the envirionment using the camera, a finite state machine as the command manager and a service to attain the locations of different coloured balls.\
