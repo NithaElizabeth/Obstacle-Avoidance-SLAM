@@ -119,6 +119,6 @@ Inorder to run this program, the PC must be equipped with :
 * OpenCV 
 
 ## Author
-The system was developed by Nitha Elizabeth John with the help from collegues and under the guidance of Prof.Luca Buoncompagni and Prof.Carmine Recchiuto\
+The system was developed by Nitha Elizabeth John and under the guidance of Prof.Luca Buoncompagni and Prof.Carmine Recchiuto\
 Author  : Nitha Elizabeth John\
 Contact : nithaelizabethjohn@gmail.com
