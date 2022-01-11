@@ -72,7 +72,7 @@ The **docs** folder contains the documentations obtained from doxgen.The **index
 ## Installation and Running Procedure
 Clone this github repository into the src folder of the ROS workspace
 ```
-git clone https://github.com/NithaElizabeth/Experimental-Robtics-Lab-3
+git clone https://github.com/NithaElizabeth/Obstacle-Avoidance-SLAM
 ```
 Next the scripts had to made executable.For that navigate to the scripts folder of this repositiory.
 ```
